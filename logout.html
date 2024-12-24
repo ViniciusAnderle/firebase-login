@@ -11,7 +11,19 @@
 <body>
   <div class="container">
     <h1 id="statusMessage"></h1>
+    
+    <!-- Se estiver logado, exibe o botão de logout -->
     <button id="logoutButton" style="display:none;">Logout</button>
+    
+    <!-- Exibe o campo para trocar a senha se a senha for padrão -->
+    <div id="changePasswordSection" style="display:none;">
+      <p>Por você estar utilizando a senha padrão, por favor, altere-a:</p>
+      <input type="password" id="newPassword" placeholder="Nova Senha">
+      <input type="password" id="confirmPassword" placeholder="Confirmar Nova Senha">
+      <button id="changePasswordButton">Alterar Senha</button>
+      <p id="errorMessage" style="color: red;"></p>
+    </div>
+    
     <p id="loginLink" style="display:none;">Clique <a href="index.html">aqui</a> para ir ao login.</p>
   </div>
 </body>

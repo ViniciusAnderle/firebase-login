@@ -20,6 +20,8 @@ const auth = getAuth(app);
 const statusMessage = document.getElementById('statusMessage');
 const logoutButton = document.getElementById('logoutButton');
 const loginLink = document.getElementById('loginLink');
+const changePasswordPrompt = document.getElementById('changePasswordPrompt');
+const goToChangePasswordButton = document.getElementById('goToChangePasswordButton');
 
 // Verifica se o usuário está logado
 onAuthStateChanged(auth, (user) => {
@@ -28,6 +30,15 @@ onAuthStateChanged(auth, (user) => {
     statusMessage.textContent = "Você está logado!";
     logoutButton.style.display = "block";  // Exibe o botão de logout
     loginLink.style.display = "none";  // Esconde o link de login
+
+    // Verifica se a senha do usuário é a senha padrão "teste123"
+    if (user.password === 'teste123') {
+      // Se a senha for "teste123", mostra o prompt para alterar a senha
+      changePasswordPrompt.style.display = "block";
+    } else {
+      // Caso contrário, não mostra a opção de troca de senha
+      changePasswordPrompt.style.display = "none";
+    }
   } else {
     // Se o usuário não estiver logado, exibe a mensagem de não logado
     statusMessage.textContent = "Você não está logado.";
@@ -50,3 +61,7 @@ logoutButton.addEventListener('click', () => {
       console.error('Erro ao deslogar:', error.message);
     });
 });
+
+
+
+

@@ -52,3 +52,16 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.password-container {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+

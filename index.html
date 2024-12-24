@@ -1,21 +1,25 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
-  <!-- Importando as bibliotecas mais recentes do Firebase -->
   <script type="module" src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
     <h1>Login</h1>
-    <input type="email" id="email" placeholder="Digite seu e-mail" required>
-    <input type="password" id="password" placeholder="Digite sua senha" required>
-    <button id="loginButton">Entrar</button>
-    <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+    <input type="email" id="email" placeholder="Email" />
+    <div class="password-container">
+    <i id="togglePassword" class="fas fa-eye"></i> <!-- Ícone de olho -->
+
+      <input type="password" id="password" placeholder="Senha" />
+    </div>
+    <button id="loginButton">Login</button>
+    <p id="errorMessage" style="color: red;"></p>
   </div>
 </body>
 </html>
